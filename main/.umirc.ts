@@ -32,22 +32,16 @@ export default defineConfig({
     type: 'none',
   },
   routes: [
+    { exact: true, path: '/', component: '@/pages/index', },
     {
       exact: false,
-      path: '/',
-      component: '@/pages/index',
+      path: '/layouts',
+      component: '@/layouts/index',
       routes: [
-        {
-          exact: true,
-          path: '/test',
-          component: '@/pages/test',
-          title: 'test',
-        },
         { exact: true, path: '/child1', microApp: 'child1' },
         { exact: true, path: '/child2', microApp: 'child2' },
       ],
     },
-    // { path: '/', component: '@/pages/index' },
   ],
   fastRefresh: {},
 });
